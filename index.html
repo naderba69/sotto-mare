@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Sotto Mare - أشهر مطعم للمأكولات البحرية الإيطالية في سان فرانسيسكو">
-    <title>Sotto Mare | مطعم المأكولات البحرية الفاخر - سان فرانسيسكو</title>
+    <meta name="description" content="Sotto Mare - San Francisco's finest Italian seafood restaurant in North Beach since 1989.">
+    <title>Sotto Mare | Italian Seafood Restaurant — San Francisco</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +22,7 @@
         html {
             scroll-behavior: smooth;
             font-size: 16px;
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
@@ -46,12 +47,11 @@
             color: inherit;
         }
 
-        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }        ::-webkit-scrollbar-track { background: #112240; }
         ::-webkit-scrollbar-thumb { background: #64ffda; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #4adbaa; }
 
-        /* ============ LOADING ============ */
+        /* ===== LOADING ===== */
         .loading-overlay {
             position: fixed;
             top: 0; left: 0;
@@ -62,7 +62,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
             transition: opacity 0.6s ease, visibility 0.6s ease;
         }
 
@@ -73,7 +73,7 @@
 
         .loading-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #e6f1ff;
             letter-spacing: 4px;
         }
@@ -83,10 +83,10 @@
         }
 
         .loading-bar-track {
-            width: 200px;
-            height: 3px;
+            width: 180px;
+            height: 2px;
             background: rgba(100,255,218,0.1);
-            border-radius: 3px;
+            border-radius: 2px;
             overflow: hidden;
         }
 
@@ -94,7 +94,7 @@
             width: 0%;
             height: 100%;
             background: #64ffda;
-            border-radius: 3px;
+            border-radius: 2px;
             animation: loadBar 1.5s ease-in-out forwards;
         }
         @keyframes loadBar {
@@ -103,21 +103,20 @@
             100% { width: 100%; }
         }
 
-        /* ============ NAVBAR ============ */
+        /* ===== NAVBAR ===== */
         .navbar {
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 9999;
             padding: 1.2rem 0;
             transition: all 0.35s ease;
-            background: transparent;
         }
 
         .navbar.scrolled {
-            background: rgba(10, 25, 47, 0.95);
+            background: rgba(10, 25, 47, 0.97);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
             padding: 0.8rem 0;
         }
 
@@ -128,63 +127,55 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 100%;
         }
 
         .nav-brand {
             font-family: 'Playfair Display', serif;
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: #e6f1ff;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
         }
 
-        .nav-brand i {
-            color: #64ffda;
-            font-size: 1.4rem;
-        }
+        .nav-brand i { color: #64ffda; font-size: 1.3rem; }
+
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2.2rem;
-            align-items: center;
-        }
+            gap: 2rem;
+            align-items: center;        }
 
         .nav-menu a {
             color: #8892b0;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: color 0.3s;
             position: relative;
         }
 
-        .nav-menu a:hover {
-            color: #64ffda;
-        }
+        .nav-menu a:hover { color: #64ffda; }
 
         .nav-menu a::after {
             content: '';
             position: absolute;
             bottom: -4px;
-            right: 0;
+            left: 0;
             width: 0;
             height: 2px;
             background: #64ffda;
             transition: width 0.3s;
         }
 
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
+        .nav-menu a:hover::after { width: 100%; }
 
         .nav-cta {
-            padding: 0.7rem 1.6rem;
+            padding: 0.65rem 1.4rem;
             border: 1px solid #64ffda;
             color: #64ffda;
             border-radius: 4px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             font-family: 'Cairo', sans-serif;
             background: transparent;
@@ -195,7 +186,7 @@
         .nav-cta:hover {
             background: rgba(100,255,218,0.1);
         }
-        /* Hamburger */
+
         .hamburger {
             display: none;
             flex-direction: column;
@@ -203,27 +194,21 @@
             cursor: pointer;
             background: none;
             border: none;
-            padding: 6px;
-            z-index: 10001;
+            padding: 5px;            z-index: 10001;
         }
 
         .hamburger span {
-            width: 26px;
+            width: 24px;
             height: 2px;
             background: #e6f1ff;
             transition: all 0.3s;
             border-radius: 2px;
         }
 
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
         .hamburger.active span:nth-child(2) { opacity: 0; }
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
 
-        /* Mobile Menu */
         .mobile-nav {
             position: fixed;
             top: 0; left: 0;
@@ -241,37 +226,30 @@
             transition: all 0.4s ease;
         }
 
-        .mobile-nav.active {
-            opacity: 1;
-            visibility: visible;        }
+        .mobile-nav.active { opacity: 1; visibility: visible; }
 
         .mobile-nav a {
             color: #e6f1ff;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 600;
             transition: color 0.3s;
         }
 
-        .mobile-nav a:hover {
-            color: #64ffda;
-        }
+        .mobile-nav a:hover { color: #64ffda; }
 
-        /* ============ HERO ============ */
+        /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
             width: 100%;
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
+            justify-content: center;            position: relative;
             overflow: hidden;
         }
 
         .hero-bg {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: 1;
+            inset: 0;
         }
 
         .hero-bg img {
@@ -282,21 +260,15 @@
 
         .hero-overlay {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(
-                135deg,
-                rgba(10,25,47,0.92) 0%,
-                rgba(17,34,68,0.85) 50%,
-                rgba(10,25,47,0.95) 100%
-            );
-            z-index: 2;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10,25,47,0.92) 0%, rgba(17,34,68,0.85) 50%, rgba(10,25,47,0.95) 100%);
         }
+
         .hero-content {
             position: relative;
             z-index: 3;
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 1.5rem;
             max-width: 850px;
         }
 
@@ -304,17 +276,13 @@
             display: inline-block;
             background: rgba(100,255,218,0.1);
             border: 1px solid rgba(100,255,218,0.3);
-            padding: 0.5rem 1.5rem;
+            padding: 0.45rem 1.4rem;
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             color: #64ffda;
             letter-spacing: 2px;
             margin-bottom: 1.5rem;
-        }
-
-        .hero-tag i {
-            margin-right: 0.5rem;
         }
 
         .hero-title {
@@ -325,38 +293,35 @@
             line-height: 1.05;
             font-weight: 700;
         }
-
-        .hero-title em {
-            color: #64ffda;
-            font-style: italic;
-        }
+        .hero-title em { color: #64ffda; font-style: italic; }
 
         .hero-sub {
             color: #8892b0;
-            font-size: clamp(1rem, 2.5vw, 1.35rem);
-            max-width: 600px;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            max-width: 580px;
             margin: 0 auto 2.5rem;
             line-height: 1.7;
         }
 
         .hero-btns {
             display: flex;
-            gap: 1rem;            justify-content: center;
+            gap: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 0.9rem 2.2rem;
+            padding: 0.85rem 2rem;
             border-radius: 4px;
             font-family: 'Cairo', sans-serif;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             border: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
         }
 
         .btn-primary {
@@ -376,8 +341,7 @@
             border: 1px solid rgba(100,255,218,0.5);
         }
 
-        .btn-outline:hover {
-            background: rgba(100,255,218,0.1);
+        .btn-outline:hover {            background: rgba(100,255,218,0.1);
             transform: translateY(-2px);
         }
 
@@ -391,26 +355,22 @@
             animation: bounce 2s infinite;
             cursor: pointer;
         }
+
         @keyframes bounce {
             0%,20%,50%,80%,100% { transform: translateX(-50%) translateY(0); }
             40% { transform: translateX(-50%) translateY(-8px); }
             60% { transform: translateX(-50%) translateY(-4px); }
         }
 
-        /* ============ SECTIONS ============ */
+        /* ===== SECTIONS ===== */
         .section {
             padding: 6rem 2rem;
             width: 100%;
             overflow-x: hidden;
         }
 
-        .section-dark {
-            background: #0a192f;
-        }
-
-        .section-darker {
-            background: #112240;
-        }
+        .section-dark { background: #0a192f; }
+        .section-darker { background: #112240; }
 
         .container {
             max-width: 1280px;
@@ -426,12 +386,11 @@
         .section-label {
             display: inline-block;
             color: #64ffda;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin-bottom: 1rem;
-        }
+            margin-bottom: 1rem;        }
 
         .section-heading {
             font-family: 'Playfair Display', serif;
@@ -439,15 +398,16 @@
             color: #e6f1ff;
             margin-bottom: 1rem;
         }
+
         .section-desc {
             color: #8892b0;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.8;
         }
 
-        /* ============ ABOUT ============ */
+        /* ===== ABOUT ===== */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -469,27 +429,23 @@
             transition: transform 0.5s;
         }
 
-        .about-img-wrap:hover img {
-            transform: scale(1.03);
-        }
+        .about-img-wrap:hover img { transform: scale(1.03); }
 
         .about-img-accent {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            left: -15px;
-            bottom: -15px;
+            top: 15px; right: 15px;
+            left: -15px; bottom: -15px;
             border: 2px solid #64ffda;
             border-radius: 8px;
             z-index: -1;
         }
-
         .about-stats {
             position: absolute;
-            bottom: -20px;
+            bottom: -18px;
             left: 20px;
-            background: #64ffda;            color: #0a192f;
-            padding: 1rem 1.5rem;
+            background: #64ffda;
+            color: #0a192f;
+            padding: 0.9rem 1.4rem;
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -503,7 +459,7 @@
         }
 
         .about-stats .lbl {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -511,9 +467,9 @@
 
         .about-text h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.9rem;
             color: #e6f1ff;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .about-text p {
@@ -525,166 +481,22 @@
         .about-features {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 0.8rem;
             margin-top: 1.5rem;
         }
 
         .about-feat {
             display: flex;
             align-items: center;
-            gap: 0.7rem;
-            color: #ccd6f6;
+            gap: 0.6rem;            color: #ccd6f6;
             font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .about-feat i {
-            color: #64ffda;
-            font-size: 1.1rem;
-            width: 20px;
-        }
-
-        /* ============ MENU ============ */
-        .menu-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 0.8rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .menu-tab-btn {
-            padding: 0.7rem 1.8rem;
-            background: transparent;
-            border: 1px solid #233554;
-            color: #8892b0;
-            border-radius: 30px;
-            cursor: pointer;
-            font-family: 'Cairo', sans-serif;
             font-size: 0.88rem;
-            font-weight: 600;
-            transition: all 0.3s;
         }
 
-        .menu-tab-btn.active,
-        .menu-tab-btn:hover {
-            background: #64ffda;
-            color: #0a192f;
-            border-color: #64ffda;
-        }
+        .about-feat i { color: #64ffda; font-size: 1rem; width: 18px; }
 
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .menu-card {
-            background: #112240;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(100,255,218,0.05);
-            transition: all 0.4s;
-        }
-
-        .menu-card:hover {            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border-color: rgba(100,255,218,0.2);
-        }
-
-        .menu-card-img {
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .menu-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .menu-card:hover .menu-card-img img {
-            transform: scale(1.08);
-        }
-
-        .menu-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: #64ffda;
-            color: #0a192f;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .menu-card-body {
-            padding: 1.5rem;
-        }
-
-        .menu-card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.8rem;
-        }
-
-        .menu-card-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: #e6f1ff;            font-weight: 600;
-        }
-
-        .menu-card-price {
-            background: rgba(100,255,218,0.1);
-            color: #64ffda;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 1rem;
-            white-space: nowrap;
-        }
-
-        .menu-card-desc {
-            color: #8892b0;
-            font-size: 0.9rem;
-            line-height: 1.7;
-        }
-
-        .menu-card-tags {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .menu-tag {
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .tag-popular {
-            background: rgba(212,175,55,0.15);
-            color: #d4af37;
-        }
-
-        .tag-gf {
-            background: rgba(40,167,69,0.15);
-            color: #28a745;
-        }
-
-        .tag-spicy {
-            background: rgba(220,53,69,0.15);
-            color: #dc3545;
-        }
-
-        /* ============ SPECIALTIES ============ */        .specialty-grid {
+        /* ===== SPECIALTIES ===== */
+        .specialty-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
@@ -705,7 +517,7 @@
         }
 
         .specialty-img {
-            height: 250px;
+            height: 240px;
             overflow: hidden;
             position: relative;
         }
@@ -717,52 +529,172 @@
             transition: transform 0.6s;
         }
 
-        .specialty-card:hover .specialty-img img {
-            transform: scale(1.1);
-        }
+        .specialty-card:hover .specialty-img img { transform: scale(1.08); }
 
         .specialty-overlay {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 1rem; left: 1rem;
             background: #64ffda;
             color: #0a192f;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
         }
-        .specialty-body {
-            padding: 2rem;
-        }
+
+        .specialty-body { padding: 1.8rem; }
 
         .specialty-name {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: #e6f1ff;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
         }
 
         .specialty-desc {
             color: #8892b0;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.7;
             margin-bottom: 1rem;
         }
 
         .specialty-price {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #64ffda;
             font-weight: 700;
         }
 
-        /* ============ GALLERY ============ */
+        /* ===== MENU ===== */
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.7rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .menu-tab-btn {
+            padding: 0.65rem 1.6rem;
+            background: transparent;
+            border: 1px solid #233554;
+            color: #8892b0;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .menu-tab-btn.active,
+        .menu-tab-btn:hover {
+            background: #64ffda;
+            color: #0a192f;
+            border-color: #64ffda;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .menu-card {
+            background: #112240;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(100,255,218,0.05);
+            transition: all 0.4s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            border-color: rgba(100,255,218,0.2);
+        }
+
+        .menu-card-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .menu-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .menu-card:hover .menu-card-img img { transform: scale(1.08); }
+
+        .menu-badge {
+            position: absolute;
+            top: 0.8rem;
+            left: 0.8rem;
+            background: #64ffda;
+            color: #0a192f;
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .menu-card-body { padding: 1.4rem; }
+
+        .menu-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.7rem;
+        }
+
+        .menu-card-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #e6f1ff;
+            font-weight: 600;
+        }
+
+        .menu-card-price {
+            background: rgba(100,255,218,0.1);
+            color: #64ffda;
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .menu-card-desc {
+            color: #8892b0;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .menu-card-tags {
+            display: flex;
+            gap: 0.4rem;
+            margin-top: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .menu-tag {
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;        }
+
+        .tag-popular { background: rgba(212,175,55,0.15); color: #d4af37; }
+        .tag-gf { background: rgba(40,167,69,0.15); color: #28a745; }
+        .tag-spicy { background: rgba(220,53,69,0.15); color: #dc3545; }
+
+        /* ===== GALLERY ===== */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 220px);
+            grid-template-rows: repeat(2, 200px);
             gap: 1rem;
         }
 
@@ -782,11 +714,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;        }
-
-        .gallery-item:hover img {
-            transform: scale(1.08);
+            transition: transform 0.5s;
         }
+
+        .gallery-item:hover img { transform: scale(1.08); }
 
         .gallery-mask {
             position: absolute;
@@ -799,17 +730,10 @@
             transition: opacity 0.3s;
         }
 
-        .gallery-item:hover .gallery-mask {
-            opacity: 1;
-        }
+        .gallery-item:hover .gallery-mask { opacity: 1; }
+        .gallery-mask i { color: #64ffda; font-size: 1.8rem; }
 
-        .gallery-mask i {
-            color: #64ffda;
-            font-size: 2rem;
-        }
-
-        /* ============ RESERVATION ============ */
-        .reserve-grid {
+        /* ===== RESERVATION ===== */        .reserve-grid {
             display: grid;
             grid-template-columns: 1fr 1.4fr;
             gap: 4rem;
@@ -818,7 +742,7 @@
 
         .reserve-info h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             color: #e6f1ff;
             margin-bottom: 1rem;
         }
@@ -831,39 +755,39 @@
 
         .reserve-detail {
             display: flex;
-            align-items: flex-start;            gap: 1rem;
-            margin-bottom: 1.5rem;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.3rem;
         }
 
         .reserve-detail-icon {
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             background: rgba(100,255,218,0.08);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #64ffda;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             flex-shrink: 0;
         }
 
         .reserve-detail h4 {
             color: #e6f1ff;
-            font-size: 0.95rem;
-            margin-bottom: 0.2rem;
+            font-size: 0.92rem;
+            margin-bottom: 0.15rem;
         }
 
         .reserve-detail p {
             color: #8892b0;
-            font-size: 0.88rem;
-            margin: 0;
-            line-height: 1.5;
+            font-size: 0.85rem;
+            margin: 0;            line-height: 1.5;
         }
 
         .reserve-form {
             background: #112240;
-            padding: 2.5rem;
+            padding: 2.2rem;
             border-radius: 16px;
             border: 1px solid rgba(100,255,218,0.08);
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
@@ -872,32 +796,29 @@
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.2rem;
-            margin-bottom: 1.2rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
+        .form-group { display: flex; flex-direction: column; }
+
         .form-group label {
             color: #ccd6f6;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 0.4rem;
-            letter-spacing: 0.5px;
+            margin-bottom: 0.35rem;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
-            padding: 0.8rem 1rem;
+            padding: 0.75rem 0.9rem;
             background: #0a192f;
             border: 1px solid #233554;
             border-radius: 6px;
             color: #e6f1ff;
             font-family: 'Cairo', sans-serif;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             transition: all 0.3s;
         }
 
@@ -909,28 +830,25 @@
             box-shadow: 0 0 0 3px rgba(100,255,218,0.1);
         }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-
+        .form-group textarea { resize: vertical; min-height: 70px; }
         .form-group select {
             appearance: none;
             -webkit-appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364ffda' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: left 1rem center;
-            padding-left: 2.5rem;
+            background-position: left 0.8rem center;
+            padding-left: 2.2rem;
         }
 
         .btn-submit {
             width: 100%;
-            padding: 1rem;
+            padding: 0.95rem;
             background: #64ffda;
             color: #0a192f;
             border: none;
-            border-radius: 8px;            font-family: 'Cairo', sans-serif;
-            font-size: 1rem;
+            border-radius: 8px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.95rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
@@ -951,19 +869,18 @@
             transform: none;
         }
 
-        /* ============ TESTIMONIALS ============ */
+        /* ===== TESTIMONIALS ===== */
         .testi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
         .testi-card {
             background: #112240;
-            padding: 2.5rem;
+            padding: 2.2rem;
             border-radius: 12px;
-            border: 1px solid rgba(100,255,218,0.05);
-            transition: all 0.3s;
+            border: 1px solid rgba(100,255,218,0.05);            transition: all 0.3s;
         }
 
         .testi-card:hover {
@@ -974,14 +891,15 @@
 
         .testi-stars {
             color: #d4af37;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 1rem;
             display: flex;
-            gap: 0.3rem;
+            gap: 0.2rem;
         }
+
         .testi-text {
             color: #8892b0;
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
             font-style: italic;
@@ -994,8 +912,8 @@
         }
 
         .testi-avatar {
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background: linear-gradient(135deg, #64ffda, #0a192f);
             display: flex;
@@ -1003,54 +921,41 @@
             justify-content: center;
             color: #0a192f;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             flex-shrink: 0;
         }
 
-        .testi-name {
-            color: #e6f1ff;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
+        .testi-name { color: #e6f1ff; font-weight: 600; font-size: 0.92rem; }
+        .testi-role { color: #8892b0; font-size: 0.8rem; }
 
-        .testi-role {
-            color: #8892b0;
-            font-size: 0.82rem;
-        }
-
-        /* ============ FOOTER ============ */
-        .footer {
-            background: #0a192f;
+        /* ===== FOOTER ===== */
+        .footer {            background: #0a192f;
             border-top: 1px solid rgba(100,255,218,0.05);
-            padding: 4rem 2rem 2rem;
+            padding: 3rem 2rem 2rem;
         }
 
         .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;            gap: 3rem;
             max-width: 1280px;
-            margin: 0 auto 3rem;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 2.5rem;
         }
 
-        .footer-brand .nav-brand {
-            margin-bottom: 1rem;
-        }
+        .footer-brand .nav-brand { margin-bottom: 1rem; }
 
         .footer-brand p {
             color: #8892b0;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
         }
 
-        .footer-social {
-            display: flex;
-            gap: 0.8rem;
-        }
+        .footer-social { display: flex; gap: 0.7rem; }
 
         .footer-social a {
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
             background: #112240;
             border-radius: 8px;
             display: flex;
@@ -1068,44 +973,35 @@
 
         .footer-col h4 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #e6f1ff;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
-        .footer-col ul {
-            list-style: none;
-        }
-        .footer-col ul li {
-            margin-bottom: 0.6rem;
-        }
+        .footer-col ul { list-style: none; }        .footer-col ul li { margin-bottom: 0.5rem; }
 
         .footer-col ul li a {
             color: #8892b0;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             transition: all 0.3s;
             display: inline-block;
         }
 
-        .footer-col ul li a:hover {
-            color: #64ffda;
-            padding-right: 5px;
-        }
+        .footer-col ul li a:hover { color: #64ffda; padding-left: 5px; }
 
         .footer-bottom {
             border-top: 1px solid #233554;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
+            margin-top: 2.5rem;
             text-align: center;
             max-width: 1280px;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .footer-bottom p {
-            color: #8892b0;
-            font-size: 0.85rem;
-        }
+        .footer-bottom p { color: #8892b0; font-size: 0.82rem; }
 
-        /* ============ TOAST ============ */
+        /* ===== TOAST ===== */
         .toast {
             position: fixed;
             bottom: 2rem;
@@ -1113,7 +1009,7 @@
             background: #112240;
             border: 1px solid rgba(100,255,218,0.2);
             color: #e6f1ff;
-            padding: 1.2rem 1.8rem;
+            padding: 1rem 1.5rem;
             border-radius: 10px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.4);
             display: flex;
@@ -1124,59 +1020,41 @@
             z-index: 99999;
         }
 
-        .toast.show {
-            transform: translateY(0);        }
+        .toast.show { transform: translateY(0); }
 
         .toast-icon {
-            width: 44px;
-            height: 44px;
+            width: 42px;
+            height: 42px;
             background: rgba(100,255,218,0.15);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
+            display: flex;            align-items: center;
             justify-content: center;
             flex-shrink: 0;
         }
 
-        .toast-icon i {
-            color: #64ffda;
-            font-size: 1.3rem;
-        }
+        .toast-icon i { color: #64ffda; font-size: 1.2rem; }
+        .toast-text h4 { font-size: 0.92rem; margin-bottom: 0.15rem; }
+        .toast-text p { color: #8892b0; font-size: 0.8rem; }
 
-        .toast-text h4 {
-            font-size: 0.95rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .toast-text p {
-            color: #8892b0;
-            font-size: 0.82rem;
-        }
-
-        /* ============ ANIMATIONS ============ */
+        /* ===== ANIMATIONS ===== */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .fade-in {
-            animation: fadeIn 0.6s ease forwards;
-        }
+        .fade-in { animation: fadeIn 0.6s ease forwards; }
 
-        /* ============ RESPONSIVE ============ */        @media (max-width: 1024px) {
-            .nav-menu { display: none; }
-            .nav-cta { display: none; }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .nav-menu, .nav-cta { display: none; }
             .hamburger { display: flex; }
 
             .about-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -1184,7 +1062,7 @@
 
             .specialty-grid { grid-template-columns: repeat(2, 1fr); }
 
-            .reserve-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .reserve-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1199,47 +1077,43 @@
             .nav-inner { padding: 0 1.5rem; }
             .section { padding: 4rem 1.5rem; }
             .hero { padding: 0 1rem; }
-
             .hero-btns { flex-direction: column; align-items: center; }
             .btn { width: 100%; max-width: 280px; justify-content: center; }
 
             .menu-grid { grid-template-columns: 1fr; }
-
             .specialty-grid { grid-template-columns: 1fr; }
-
             .form-row { grid-template-columns: 1fr; }
-
             .reserve-form { padding: 1.5rem; }
-
             .testi-grid { grid-template-columns: 1fr; }
-
             .about-features { grid-template-columns: 1fr; }
 
             .gallery-grid {
                 grid-template-columns: 1fr;
-                grid-template-rows: repeat(4, 180px);
+                grid-template-rows: repeat(5, 180px);
             }
-            .gallery-item:nth-child(1) { grid-column: span 1; }
+            .gallery-item:nth-child(1) { grid-column: span 1; grid-row: span 1; }
 
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
 
-            .toast { left: 1rem; right: 1rem; bottom: 1rem; }        }
+            .toast { left: 1rem; right: 1rem; bottom: 1rem; }
+        }
 
         @media (max-width: 480px) {
             html { font-size: 14px; }
             .nav-inner { padding: 0 1rem; }
-            .nav-brand { font-size: 1.4rem; }
+            .nav-brand { font-size: 1.3rem; }
             .section { padding: 3rem 1rem; }
             .section-header { margin-bottom: 2.5rem; }
-            .menu-tab-btn { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
-            .about-img-wrap img { height: 280px; }
-            .about-stats { bottom: -15px; left: 15px; padding: 0.8rem 1.2rem; }
+            .menu-tab-btn { padding: 0.55rem 1rem; font-size: 0.78rem; }
+            .about-img-wrap img { height: 260px; }
+            .about-stats { bottom: -12px; left: 12px; padding: 0.7rem 1.1rem; }
+            .about-stats .num { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============ LOADING ============ -->
+    <!-- LOADING -->
     <div class="loading-overlay" id="loading">
         <div class="loading-logo">SOTTO <span>MARE</span></div>
         <div class="loading-bar-track">
@@ -1247,63 +1121,62 @@
         </div>
     </div>
 
-    <!-- ============ NAVBAR ============ -->
+    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
             <a href="#" class="nav-brand">
-                <i class="fas fa-fish"></i>
-                Sotto Mare
+                <i class="fas fa-fish"></i>                Sotto Mare
             </a>
 
             <ul class="nav-menu">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#about">من نحن</a></li>
-                <li><a href="#specialties">الأطباق المميزة</a></li>
-                <li><a href="#menu">القائمة</a></li>
-                <li><a href="#gallery">المعرض</a></li>
-                <li><a href="#testimonials">آراء العملاء</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#specialties">Specialties</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
             </ul>
 
-            <a href="#reservation" class="nav-cta">احجز الآن</a>
+            <a href="#reservation" class="nav-cta">Reserve</a>
 
-            <button class="hamburger" id="hamburger" aria-label="القائمة">
+            <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
-    <!-- ============ MOBILE NAV ============ -->    <div class="mobile-nav" id="mobileNav">
-        <a href="#home" onclick="closeMob()">الرئيسية</a>
-        <a href="#about" onclick="closeMob()">من نحن</a>
-        <a href="#specialties" onclick="closeMob()">الأطباق المميزة</a>
-        <a href="#menu" onclick="closeMob()">القائمة</a>
-        <a href="#gallery" onclick="closeMob()">المعرض</a>
-        <a href="#testimonials" onclick="closeMob()">آراء العملاء</a>
-        <a href="#reservation" onclick="closeMob()">احجز الآن</a>
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#home" onclick="closeMob()">Home</a>
+        <a href="#about" onclick="closeMob()">About</a>
+        <a href="#specialties" onclick="closeMob()">Specialties</a>
+        <a href="#menu" onclick="closeMob()">Menu</a>
+        <a href="#gallery" onclick="closeMob()">Gallery</a>
+        <a href="#testimonials" onclick="closeMob()">Reviews</a>
+        <a href="#reservation" onclick="closeMob()">Reservations</a>
     </div>
 
-    <!-- ============ HERO ============ -->
+    <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=1920&q=80" alt="Restaurant">
+            <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=1920&q=80" alt="Restaurant" loading="eager">
         </div>
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
             <div class="hero-tag">
                 <i class="fas fa-star"></i>
-                منذ عام 1989 · حي North Beach
+                North Beach · Est. 1989
             </div>
             <h1 class="hero-title">Sotto <em>Mare</em></h1>
-            <p class="hero-sub">تجربة فريدة من نوعها للمأكولات البحرية الإيطالية الأصيلة في قلب سان فرانسيسكو</p>
+            <p class="hero-sub">San Francisco's Iconic Italian Seafood Experience — Fresh from the Pacific, crafted with Italian tradition.</p>
             <div class="hero-btns">
                 <a href="#reservation" class="btn btn-primary">
                     <i class="fas fa-calendar-check"></i>
-                    احجز طاولتك الآن
-                </a>
-                <a href="#menu" class="btn btn-outline">
+                    Reserve a Table
+                </a>                <a href="#menu" class="btn btn-outline">
                     <i class="fas fa-utensils"></i>
-                    استكشف القائمة
+                    Explore Menu
                 </a>
             </div>
         </div>
@@ -1313,80 +1186,77 @@
         </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
+    <!-- ABOUT -->
     <section class="section section-dark" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-img-wrap reveal">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="مطعم Sotto Mare">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Sotto Mare Interior">
                     <div class="about-img-accent"></div>
                     <div class="about-stats">
-                        <div class="num">35+</div>                        <div class="lbl">سنة من التميز</div>
+                        <div class="num">35+</div>
+                        <div class="lbl">Years of Excellence</div>
                     </div>
                 </div>
 
                 <div class="about-text reveal">
-                    <span class="section-label">قصتنا</span>
-                    <h3>تراث من النكهات البحرية الأصيلة</h3>
-                    <p>
-                        في قلب حي North Beach النابض بالحياة، يقدم Sotto Mare تجربة طعام استثنائية منذ عام 1989. نلتزم بتقديم أجود المأكولات البحرية المستدامة مع وصفات إيطالية تقليدية توارثتها الأجيال.
-                    </p>
-                    <p>
-                        كل طبق يحكي قصة البحر، حيث يدمج طهاتنا بين التقنيات الإيطالية العريقة وأجود أنواع الأسماك الطازجة من ساحل المحيط الهادئ.
-                    </p>
+                    <span class="section-label">Our Story</span>
+                    <h3>A Legacy of Fresh Seafood in the Heart of San Francisco</h3>
+                    <p>Nestled in the vibrant North Beach neighborhood, Sotto Mare has been serving the finest Italian-inspired seafood since 1989. Our commitment to sustainably sourced ingredients and time-honored recipes has made us a beloved destination.</p>
+                    <p>Every dish tells a story of the sea, crafted with passion by our chefs who blend traditional Italian techniques with the freshest catch from the Pacific coast.</p>
 
                     <div class="about-features">
-                        <div class="about-feat"><i class="fas fa-check-circle"></i> مأكولات بحرية طازجة يومياً</div>
-                        <div class="about-feat"><i class="fas fa-check-circle"></i> مصادر مستدامة ومعتمدة</div>
-                        <div class="about-feat"><i class="fas fa-check-circle"></i> وصفات إيطالية أصيلة</div>
-                        <div class="about-feat"><i class="fas fa-check-circle"></i> حائز على جوائز متعددة</div>
+                        <div class="about-feat"><i class="fas fa-check-circle"></i> Daily Fresh Catch</div>
+                        <div class="about-feat"><i class="fas fa-check-circle"></i> Sustainable Sourcing</div>
+                        <div class="about-feat"><i class="fas fa-check-circle"></i> Authentic Italian Recipes</div>
+                        <div class="about-feat"><i class="fas fa-check-circle"></i> Award Winning</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ SPECIALTIES ============ -->
+    <!-- SPECIALTIES -->
     <section class="section section-darker" id="specialties">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">اختيار الشيف</span>
-                <h2 class="section-heading">أطباقنا المميزة</h2>
-                <p class="section-desc">اكتشف الأطباق التي جعلت Sotto Mare مؤسَّسة سان فرانسيسكو الحقيقية</p>
+                <span class="section-label">Chef's Selection</span>
+                <h2 class="section-heading">Our Signature Dishes</h2>
+                <p class="section-desc">Discover the dishes that have made Sotto Mare a San Francisco institution.</p>
             </div>
-
             <div class="specialty-grid">
                 <div class="specialty-card reveal">
                     <div class="specialty-img">
                         <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&q=80" alt="Cioppino">
-                        <div class="specialty-overlay">الطبق المميز</div>
+                        <div class="specialty-overlay">Signature</div>
                     </div>
                     <div class="specialty-body">
                         <h3 class="specialty-name">Cioppino</h3>
-                        <p class="specialty-desc">يخنة المأكولات البحرية الشهيرة مع سرطان البحر Dungeness والروبيان وبلح البحر في مرق الطماطم الغني</p>
+                        <p class="specialty-desc">Our legendary San Francisco cioppino with Dungeness crab, shrimp, clams, and mussels in a rich tomato-wine broth.</p>
                         <span class="specialty-price">$42.95</span>
                     </div>
                 </div>
 
                 <div class="specialty-card reveal">
                     <div class="specialty-img">
-                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=800&q=80" alt="Linguine">                        <div class="specialty-overlay">الأكثر طلباً</div>
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=800&q=80" alt="Linguine alle Vongole">
+                        <div class="specialty-overlay">Most Popular</div>
                     </div>
                     <div class="specialty-body">
                         <h3 class="specialty-name">Linguine alle Vongole</h3>
-                        <p class="specialty-desc">لينغويني طازج مع محار Manila والثوم والنبيذ الأبيض مع لمسة من الفلفل الحار</p>
+                        <p class="specialty-desc">Fresh linguine with Manila clams, garlic, white wine, and a hint of chili in our classic Italian preparation.</p>
                         <span class="specialty-price">$28.95</span>
                     </div>
                 </div>
 
                 <div class="specialty-card reveal">
                     <div class="specialty-img">
-                        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=800&q=80" alt="Branzino">
-                        <div class="specialty-overlay">اختيار الشيف</div>
+                        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=800&q=80" alt="Grilled Branzino">
+                        <div class="specialty-overlay">Chef's Pick</div>
                     </div>
                     <div class="specialty-body">
                         <h3 class="specialty-name">Grilled Branzino</h3>
-                        <p class="specialty-desc">سمك البحر الأبيض المتوسط المشوي مع الليمون والكبر وزيت الزيتون البكر</p>
+                        <p class="specialty-desc">Whole Mediterranean sea bass grilled to perfection with lemon, capers, and a drizzle of extra virgin olive oil.</p>
                         <span class="specialty-price">$36.95</span>
                     </div>
                 </div>
@@ -1394,181 +1264,193 @@
         </div>
     </section>
 
-    <!-- ============ MENU ============ -->
+    <!-- MENU -->
     <section class="section section-dark" id="menu">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">قائمتنا</span>
-                <h2 class="section-heading">أشهى الأطباق البحرية</h2>
-                <p class="section-desc">مجموعة مختارة من أجود الأطباق الإيطالية البحرية الفاخرة</p>
+                <span class="section-label">Our Menu</span>
+                <h2 class="section-heading">Explore Our Culinary Offerings</h2>
+                <p class="section-desc">From the depths of the Pacific to your plate — every dish crafted with Italian craftsmanship.</p>
             </div>
-
             <div class="menu-tabs reveal">
-                <button class="menu-tab-btn active" data-cat="all">الكل</button>
-                <button class="menu-tab-btn" data-cat="appetizers">المقبلات</button>
-                <button class="menu-tab-btn" data-cat="seafood">المأكولات البحرية</button>
-                <button class="menu-tab-btn" data-cat="pasta">المعكرونة</button>
-                <button class="menu-tab-btn" data-cat="grill">المشويات</button>
+                <button class="menu-tab-btn active" data-cat="all">All</button>
+                <button class="menu-tab-btn" data-cat="appetizers">Appetizers</button>
+                <button class="menu-tab-btn" data-cat="seafood">Seafood</button>
+                <button class="menu-tab-btn" data-cat="pasta">Pasta</button>
+                <button class="menu-tab-btn" data-cat="grill">Grills</button>
             </div>
 
-            <div class="menu-grid" id="menuGrid">
-                <!-- Dynamic -->
-            </div>
+            <div class="menu-grid" id="menuGrid"></div>
         </div>
     </section>
 
-    <!-- ============ GALLERY ============ -->
+    <!-- GALLERY -->
     <section class="section section-darker" id="gallery">
-        <div class="container">            <div class="section-header reveal">
-                <span class="section-label">المعرض</span>
-                <h2 class="section-heading">لحظات من Sotto Mare</h2>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Gallery</span>
+                <h2 class="section-heading">A Glimpse of Sotto Mare</h2>
             </div>
 
             <div class="gallery-grid reveal">
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Fine Dining">
-                    <div class="gallery-mask"><i class="fas fa-search-plus"></i></div>
+                    <div class="gallery-mask"><i class="fas fa-expand"></i></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Seafood">
-                    <div class="gallery-mask"><i class="fas fa-search-plus"></i></div>
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Seafood Platter">
+                    <div class="gallery-mask"><i class="fas fa-expand"></i></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?w=600&q=80" alt="Pasta">
-                    <div class="gallery-mask"><i class="fas fa-search-plus"></i></div>
+                    <div class="gallery-mask"><i class="fas fa-expand"></i></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80" alt="Cocktails">
-                    <div class="gallery-mask"><i class="fas fa-search-plus"></i></div>
+                    <div class="gallery-mask"><i class="fas fa-expand"></i></div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=80" alt="Ambiance">
-                    <div class="gallery-mask"><i class="fas fa-search-plus"></i></div>
+                    <div class="gallery-mask"><i class="fas fa-expand"></i></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ RESERVATION ============ -->
+    <!-- RESERVATION -->
     <section class="section section-dark" id="reservation">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">الحجوزات</span>
-                <h2 class="section-heading">احجز طاولتك الآن</h2>
-                <p class="section-desc">نوصي بالحجز المسبق لضمان تجربة طعام لا تُنسى</p>
+                <span class="section-label">Reservations</span>                <h2 class="section-heading">Reserve Your Table</h2>
+                <p class="section-desc">Secure your spot for an unforgettable dining experience. We recommend booking in advance.</p>
             </div>
 
             <div class="reserve-grid">
                 <div class="reserve-info reveal">
-                    <h3>تفضل بزيارتنا</h3>
-                    <p>سواء كانت عشاءً رومانسياً، احتفالاً عائلياً، أو ليلة مع الأصدقاء - سنحرص على جعل تجربتك في Sotto Mare استثنائية.</p>
+                    <h3>Visit Us in North Beach</h3>
+                    <p>Whether it's a romantic dinner, family celebration, or night out with friends — we'll make sure your evening at Sotto Mare is extraordinary.</p>
 
                     <div class="reserve-detail">
                         <div class="reserve-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div><h4>العنوان</h4><p>543 Green Street, San Francisco, CA 94133</p></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>543 Green Street, San Francisco, CA 94133</p>
+                        </div>
                     </div>
                     <div class="reserve-detail">
-                        <div class="reserve-detail-icon"><i class="fas fa-clock"></i></div>                        <div><h4>ساعات العمل</h4><p>الغداء: 11:30 ص - 3:00 م<br>العشاء: 5:00 م - 10:00 م</p></div>
+                        <div class="reserve-detail-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Lunch: 11:30 AM – 3:00 PM<br>Dinner: 5:00 PM – 10:00 PM</p>
+                        </div>
                     </div>
                     <div class="reserve-detail">
                         <div class="reserve-detail-icon"><i class="fas fa-phone"></i></div>
-                        <div><h4>الهاتف</h4><p>(415) 398-3181</p></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(415) 398-3181</p>
+                        </div>
                     </div>
                     <div class="reserve-detail">
                         <div class="reserve-detail-icon"><i class="fas fa-envelope"></i></div>
-                        <div><h4>البريد الإلكتروني</h4><p>info@sottomaresf.com</p></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@sottomaresf.com</p>
+                        </div>
                     </div>
                 </div>
 
                 <form class="reserve-form reveal" id="reserveForm" novalidate>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name">الاسم الكامل *</label>
-                            <input type="text" id="name" placeholder="محمد أحمد" required>
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">البريد الإلكتروني *</label>
-                            <input type="email" id="email" placeholder="example@email.com" required>
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
                         </div>
                     </div>
-
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="phone">رقم الهاتف *</label>
+                            <label for="phone">Phone Number *</label>
                             <input type="tel" id="phone" placeholder="(415) 000-0000" required>
                         </div>
                         <div class="form-group">
-                            <label for="guests">عدد الأشخاص *</label>
+                            <label for="guests">Number of Guests *</label>
                             <select id="guests" required>
-                                <option value="">اختر العدد</option>
-                                <option value="1">شخص واحد</option>
-                                <option value="2">شخصان</option>
-                                <option value="3">3 أشخاص</option>
-                                <option value="4">4 أشخاص</option>
-                                <option value="5">5 أشخاص</option>
-                                <option value="6">6 أشخاص</option>
-                                <option value="7-8">7-8 أشخاص</option>
-                                <option value="9+">9+ (غرفة خاصة)</option>
+                                <option value="">Select guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7-8">7–8 Guests</option>
+                                <option value="9+">9+ (Private Dining)</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="date">التاريخ المفضل *</label>
+                            <label for="date">Preferred Date *</label>
                             <input type="date" id="date" required>
-                        </div>                        <div class="form-group">
-                            <label for="time">الوقت المفضل *</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Preferred Time *</label>
                             <select id="time" required>
-                                <option value="">اختر الوقت</option>
-                                <option value="11:30">11:30 ص</option>
-                                <option value="12:00">12:00 م</option>
-                                <option value="12:30">12:30 م</option>
-                                <option value="13:00">1:00 م</option>
-                                <option value="17:00">5:00 م</option>
-                                <option value="17:30">5:30 م</option>
-                                <option value="18:00">6:00 م</option>
-                                <option value="18:30">6:30 م</option>
-                                <option value="19:00">7:00 م</option>
-                                <option value="19:30">7:30 م</option>
-                                <option value="20:00">8:00 م</option>
-                                <option value="20:30">8:30 م</option>
-                                <option value="21:00">9:00 م</option>
+                                <option value="">Select time</option>
+                                <option value="11:30">11:30 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="12:30">12:30 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="13:30">1:30 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
                             </select>
                         </div>
                     </div>
-
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="occasion">المناسبة</label>
+                            <label for="occasion">Occasion</label>
                             <select id="occasion">
-                                <option value="">اختر المناسبة</option>
-                                <option value="casual">عشاء عادي</option>
-                                <option value="birthday">عيد ميلاد</option>
-                                <option value="anniversary">ذكرى سنوية</option>
-                                <option value="business">عشاء عمل</option>
-                                <option value="date">موعد غرامي</option>
-                                <option value="celebration">احتفال</option>
+                                <option value="">Select occasion</option>
+                                <option value="casual">Casual Dining</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="date">Date Night</option>
+                                <option value="celebration">Celebration</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="notes">ملاحظات خاصة</label>
-                            <textarea id="notes" placeholder="الحساسيات الغذائية، تفضيلات الجلوس..."></textarea>
+                            <label for="notes">Special Requests</label>
+                            <textarea id="notes" placeholder="Allergies, dietary restrictions, seating preferences..."></textarea>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn-submit" id="submitBtn">تأكيد الحجز</button>
+                    <button type="submit" class="btn-submit" id="submitBtn">Confirm Reservation</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- ============ TESTIMONIALS ============ -->
+    <!-- TESTIMONIALS -->
     <section class="section section-darker" id="testimonials">
         <div class="container">
-            <div class="section-header reveal">                <span class="section-label">آراء العملاء</span>
-                <h2 class="section-heading">ماذا يقول عملاؤنا</h2>
-                <p class="section-desc">تجارب محبي الطعام الذين عاشوا سحر Sotto Mare</p>
+            <div class="section-header reveal">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-heading">What Our Guests Say</h2>
+                <p class="section-desc">Hear from the food lovers who have experienced the magic of Sotto Mare.</p>
             </div>
 
             <div class="testi-grid">
@@ -1576,10 +1458,20 @@
                     <div class="testi-stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="testi-text">"السيوبينو هنا لا يُصدق - الأفضل على الإطلاق. الأجواء دافئة وجذابة، والخدمة لا تشوبها شائبة. جوهرة سان فرانسيسكو الحقيقية."</p>
+                    <p class="testi-text">"The Cioppino here is absolutely incredible — the best I've ever had. The atmosphere is warm and inviting, and the service is impeccable. A true San Francisco gem."</p>
                     <div class="testi-author">
-                        <div class="testi-avatar">م.ر</div>
-                        <div><div class="testi-name">محمد الرحمن</div><div class="testi-role">ناقد طعام - SF Chronicle</div></div>
+                        <div class="testi-avatar">MR</div>
+                        <div><div class="testi-name">Michael Rodriguez</div><div class="testi-role">Food Critic, SF Chronicle</div></div>
+                    </div>
+                </div>
+
+                <div class="testi-card reveal">
+                    <div class="testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>                    <p class="testi-text">"We've been coming to Sotto Mare for our anniversary every year for a decade. The consistency and quality never disappoints. It feels like coming home."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">SC</div>
+                        <div><div class="testi-name">Sarah & Kevin Chen</div><div class="testi-role">Loyal Guests Since 2014</div></div>
                     </div>
                 </div>
 
@@ -1587,66 +1479,55 @@
                     <div class="testi-stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="testi-text">"نأتي إلى Sotto Mare في ذكرى زواجنا كل عام منذ عشر سنوات. الجودة والاتساق لا يخيبان أبداً. يشعرنا وكأننا في بيتنا."</p>
+                    <p class="testi-text">"As a chef myself, I'm blown away by the quality and authenticity. The Linguine alle Vongole is textbook perfection. A must-visit for any seafood lover."</p>
                     <div class="testi-author">
-                        <div class="testi-avatar">س.ك</div>
-                        <div><div class="testi-name">سارة وخالد Chen</div><div class="testi-role">عملاء مخلصون منذ 2014</div></div>
-                    </div>
-                </div>
-
-                <div class="testi-card reveal">
-                    <div class="testi-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="testi-text">"كطاهٍ بنفسي، أنا منبهر بالجودة والأصالة. Linguine alle Vongole هو الكمال بعينه. يجب زيارته لكل محب للمأكولات البحرية."</p>
-                    <div class="testi-author">
-                        <div class="testi-avatar">ش.ل</div>
-                        <div><div class="testi-name">الشيف لورينزو</div><div class="testi-role">مرشح James Beard</div></div>
+                        <div class="testi-avatar">LP</div>
+                        <div><div class="testi-name">Chef Lorenzo Pellegrini</div><div class="testi-role">James Beard Nominee</div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ FOOTER ============ -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="nav-brand"><i class="fas fa-fish"></i> Sotto Mare</div>
-                <p>نقدم أرقى المأكولات البحرية الإيطالية في سان فرانسيسكو منذ عام 1989. صيد طازج، وصفات خالدة، وتجارب لا تُنسى.</p>
+                <p>Serving San Francisco's finest Italian seafood since 1989. Fresh catch, timeless recipes, unforgettable experiences.</p>
                 <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
                 </div>
             </div>
 
             <div class="footer-col">
-                <h4>روابط سريعة</h4>
+                <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#about">قصتنا</a></li>
-                    <li><a href="#menu">القائمة الكاملة</a></li>
-                    <li><a href="#reservation">الحجوزات</a></li>
-                    <li><a href="#gallery">المعرض</a></li>
-                    <li><a href="#">الفعاليات الخاصة</a></li>
-                    <li><a href="#">بطاقات الهدايا</a></li>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#menu">Full Menu</a></li>
+                    <li><a href="#reservation">Reservations</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#">Private Events</a></li>
+                    <li><a href="#">Gift Cards</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>ساعات العمل</h4>
-                <ul>
-                    <li><a href="#">الإثنين - الخميس</a></li>
-                    <li><a href="#" style="color:#8892b0">11:30 ص - 10:00 م</a></li>
-                    <li><a href="#">الجمعة - السبت</a></li>
-                    <li><a href="#" style="color:#8892b0">11:30 ص - 11:00 م</a></li>
-                    <li><a href="#">الأحد</a></li>
-                    <li><a href="#" style="color:#8892b0">12:00 م - 9:00 م</a></li>
+                <h4>Hours</h4>
+                <ul>                    <li><a href="#">Monday – Thursday</a></li>
+                    <li><a href="#" style="color:#8892b0">11:30 AM – 10:00 PM</a></li>
+                    <li><a href="#">Friday – Saturday</a></li>
+                    <li><a href="#" style="color:#8892b0">11:30 AM – 11:00 PM</a></li>
+                    <li><a href="#">Sunday</a></li>
+                    <li><a href="#" style="color:#8892b0">12:00 PM – 9:00 PM</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>تواصل معنا</h4>
+                <h4>Contact</h4>
                 <ul>
                     <li><a href="#">543 Green St</a></li>
                     <li><a href="#">San Francisco, CA 94133</a></li>
@@ -1657,123 +1538,56 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2024 Sotto Mare Osteria Mozzarella. جميع الحقوق محفوظة.</p>
+            <p>&copy; 2024 Sotto Mare Osteria Mozzarella. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- ============ TOAST ============ -->
+    <!-- TOAST -->
     <div class="toast" id="toast">
         <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
-        <div class="toast-text">            <h4>تم تأكيد الحجز!</h4>
-            <p>سنرسل تأكيد الحجز إلى بريدك الإلكتروني قريباً</p>
+        <div class="toast-text">
+            <h4>Reservation Confirmed!</h4>
+            <p>We'll send a confirmation to your email shortly.</p>
         </div>
     </div>
 
     <script>
         // ===== MENU DATA =====
-        const menuData = [
-            {
-                id: 1, name: "Calamari Fritti", cat: "appetizers",
-                price: "$16.95", desc: "حلقات الكاليماري المقلية بخلطة خفيفة مع صلصة مارينارا محلية الصنع وصلصة الليمون",
-                img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&q=80",
-                badge: "الأكثر طلباً", tags: [{text:"شائع",cls:"tag-popular"}]
-            },
-            {
-                id: 2, name: "Shrimp Scampi", cat: "appetizers",
-                price: "$18.95", desc: "جمبري جامبو في زبدة الثوم والنبيذ الأبيض مع الأعشاب الطازجة والخبز المقرمش",
-                img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80",
-                badge: "خالي من الغلوتين", tags: [{text:"خالي غلوتين",cls:"tag-gf"}]
-            },
-            {
-                id: 3, name: "Antipasto Misto", cat: "appetizers",
-                price: "$22.95", desc: "لحوم إيطالية مستوردة، أجبان، خضروات مخللة وموزاريلا طازجة",
-                img: "https://images.unsplash.com/photo-1572695157366-5e58390a4993?w=600&q=80",
-                badge: "لشخصين", tags: [{text:"لشخصين",cls:"tag-popular"}]
-            },
-            {
-                id: 4, name: "Cioppino", cat: "seafood",
-                price: "$42.95", desc: "يخنة المأكولات البحرية الشهيرة مع سرطان البحر Dungeness والروبيان وبلح البحر",
-                img: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80",
-                badge: "الطبق المميز", tags: [{text:"توقيع",cls:"tag-popular"},{text:"خالي غلوتين",cls:"tag-gf"}]
-            },
-            {
-                id: 5, name: "Grilled Branzino", cat: "seafood",
-                price: "$36.95", desc: "سمك البحر الأبيض المتوسط المشوي مع الليمون والكبر وزيت الزيتون البكر",
-                img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&q=80",
-                badge: "خالي من الغلوتين", tags: [{text:"خالي غلوتين",cls:"tag-gf"}]
-            },
-            {
-                id: 6, name: "Lobster Fra Diavolo", cat: "seafood",
-                price: "$54.95", desc: "لوبستر مين كامل في صلصة الطماطم الحارة مع الفلفل الكرز والأعشاب الطازجة",
-                img: "https://images.unsplash.com/photo-1551248429-40975aa4de74?w=600&q=80",
-                badge: "حار", tags: [{text:"حار",cls:"tag-spicy"}]
-            },
-            {
-                id: 7, name: "Linguine alle Vongole", cat: "pasta",
-                price: "$28.95", desc: "لينغويني طازج مع محار Manila والثوم والنبيذ الأبيض مع لمسة من الفلفل الحار",
-                img: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80",
-                badge: "التوقيع", tags: [{text:"توقيع",cls:"tag-popular"}]
-            },            {
-                id: 8, name: "Fettuccine Alfredo", cat: "pasta",
-                price: "$22.95", desc: "فيتوتشيني محلي الصنع في صلصة الكريما الغنية بالبارميزان مع الفلفل الأسود",
-                img: "https://images.unsplash.com/photo-1626844131082-256783844137?w=600&q=80",
-                badge: "نباتي", tags: [{text:"نباتي",cls:"tag-gf"}]
-            },
-            {
-                id: 9, name: "Spaghetti ai Frutti di Mare", cat: "pasta",
-                price: "$34.95", desc: "سباغيتي مع تشكيلة مأكولات بحرية طازجة في صلصة الطماطم الخفيفة والنبيذ الأبيض",
-                img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&q=80",
-                badge: "اختيار الشيف", tags: [{text:"اختيار الشيف",cls:"tag-popular"}]
-            },
-            {
-                id: 10, name: "Surf & Turf", cat: "grill",
-                price: "$56.95", desc: "فيليه مينون 8 أونصة مع ذيل لوبستر - الأفضل من العالمين",
-                img: "https://images.unsplash.com/photo-1546241072-48010ad2862c?w=600&q=80",
-                badge: "الأفضل", tags: [{text:"الأفضل",cls:"tag-popular"},{text:"خالي غلوتين",cls:"tag-gf"}]
-            },
-            {
-                id: 11, name: "Filet Mignon", cat: "grill",
-                price: "$44.95", desc: "فيليه مينون 8 أونصة مع بطاطا مهروسة بالترافل وصلصة النبيذ الأحمر",
-                img: "https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80",
-                badge: "بريميوم", tags: [{text:"بريميوم",cls:"tag-popular"},{text:"خالي غلوتين",cls:"tag-gf"}]
-            },
-            {
-                id: 12, name: "Veal Chop Milanese", cat: "grill",
-                price: "$42.95", desc: "ضلعة عجل مقلية مع سلطة جرجير وطماطم كرزية وتتبيلة الليمون",
-                img: "https://images.unsplash.com/photo-1432139509613-5c4255a1d197?w=600&q=80",
-                badge: "تقليدي", tags: [{text:"تقليدي",cls:"tag-popular"}]
-            }
+        var menuData = [
+            { id:1, name:"Calamari Fritti", cat:"appetizers", price:"$16.95", desc:"Lightly battered squid rings with house-made marinara and lemon aioli.", img:"https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&q=80", badge:"Most Popular", tags:[{text:"Popular",cls:"tag-popular"}] },
+            { id:2, name:"Shrimp Scampi", cat:"appetizers", price:"$18.95", desc:"Jumbo shrimp in garlic butter, white wine, and fresh herbs with crusty bread.", img:"https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80", badge:"Gluten Free", tags:[{text:"Gluten Free",cls:"tag-gf"}] },
+            { id:3, name:"Antipasto Misto", cat:"appetizers", price:"$22.95", desc:"Imported Italian meats, cheeses, marinated vegetables, and fresh mozzarella.", img:"https://images.unsplash.com/photo-1572695157366-5e58390a4993?w=600&q=80", badge:"For Two", tags:[{text:"For Two",cls:"tag-popular"}] },
+            { id:4, name:"Cioppino", cat:"seafood", price:"$42.95", desc:"SF's iconic seafood stew with Dungeness crab, shrimp, clams, and mussels.", img:"https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80", badge:"Signature", tags:[{text:"Signature",cls:"tag-popular"},{text:"Gluten Free",cls:"tag-gf"}] },
+            { id:5, name:"Grilled Branzino", cat:"seafood", price:"$36.95", desc:"Whole Mediterranean sea bass with lemon, capers, and olive oil.", img:"https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&q=80", badge:"Gluten Free", tags:[{text:"Gluten Free",cls:"tag-gf"}] },
+            { id:6, name:"Lobster Fra Diavolo", cat:"seafood", price:"$54.95", desc:"Whole Maine lobster in spicy tomato sauce with cherry peppers and fresh herbs.", img:"https://images.unsplash.com/photo-1551248429-40975aa4de74?w=600&q=80", badge:"Spicy", tags:[{text:"Spicy",cls:"tag-spicy"}] },
+            { id:7, name:"Linguine alle Vongole", cat:"pasta", price:"$28.95", desc:"Fresh linguine with Manila clams, garlic, white wine, and a touch of chili.", img:"https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80", badge:"Signature", tags:[{text:"Signature",cls:"tag-popular"}] },
+            { id:8, name:"Fettuccine Alfredo", cat:"pasta", price:"$22.95", desc:"House-made fettuccine in rich creamy Parmesan with fresh cracked pepper.", img:"https://images.unsplash.com/photo-1626844131082-256783844137?w=600&q=80", badge:"Vegetarian", tags:[{text:"Vegetarian",cls:"tag-gf"}] },
+            { id:9, name:"Spaghetti ai Frutti di Mare", cat:"pasta", price:"$34.95", desc:"Spaghetti with medley of fresh seafood in light tomato and white wine sauce.", img:"https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&q=80", badge:"Chef's Pick", tags:[{text:"Chef's Pick",cls:"tag-popular"}] },
+            { id:10, name:"Surf & Turf", cat:"grill", price:"$56.95", desc:"8oz filet mignon paired with lobster tail — the best of both worlds.", img:"https://images.unsplash.com/photo-1546241072-48010ad2862c?w=600&q=80", badge:"Best Value", tags:[{text:"Best Value",cls:"tag-popular"},{text:"Gluten Free",cls:"tag-gf"}] },
+            { id:11, name:"Filet Mignon", cat:"grill", price:"$44.95", desc:"8oz center-cut tenderloin with truffle mashed potatoes and red wine reduction.", img:"https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80", badge:"Premium", tags:[{text:"Premium",cls:"tag-popular"},{text:"Gluten Free",cls:"tag-gf"}] },
+            { id:12, name:"Veal Chop Milanese", cat:"grill", price:"$42.95", desc:"Breaded veal chop with arugula salad, cherry tomatoes, and lemon vinaigrette.", img:"https://images.unsplash.com/photo-1432139509613-5c4255a1d197?w=600&q=80", badge:"Traditional", tags:[{text:"Traditional",cls:"tag-popular"}] }
         ];
-
-        // ===== LOADING SCREEN =====
+        // ===== LOADING =====
         window.addEventListener('load', function() {
             setTimeout(function() {
-                var loader = document.getElementById('loading');
-                loader.classList.add('fade-out');
-                setTimeout(function() {
-                    loader.style.display = 'none';
-                }, 600);
+                var el = document.getElementById('loading');
+                if (el) el.classList.add('fade-out');
             }, 1800);
         });
 
-        // Safety fallback - force hide loading after 5 seconds
+        // Force hide after 5s
         setTimeout(function() {
-            var loader = document.getElementById('loading');
-            if (loader && !loader.classList.contains('fade-out')) {
-                loader.classList.add('fade-out');
-                setTimeout(function() {
-                    loader.style.display = 'none';                }, 600);
+            var el = document.getElementById('loading');
+            if (el) {
+                el.classList.add('fade-out');
+                setTimeout(function() { el.style.display = 'none'; }, 600);
             }
         }, 5000);
 
-        // ===== NAVBAR SCROLL =====
+        // ===== NAVBAR =====
         var navbar = document.getElementById('navbar');
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
 
         // ===== HAMBURGER =====
@@ -1795,13 +1609,13 @@
         // ===== RENDER MENU =====
         function renderMenu(cat) {
             var grid = document.getElementById('menuGrid');
+            if (!grid) return;
             grid.innerHTML = '';
 
             var items = cat === 'all' ? menuData : menuData.filter(function(i) { return i.cat === cat; });
 
             items.forEach(function(item, idx) {
-                var card = document.createElement('div');
-                card.className = 'menu-card fade-in';
+                var card = document.createElement('div');                card.className = 'menu-card fade-in';
                 card.style.animationDelay = (idx * 0.08) + 's';
 
                 var tagsHTML = '';
@@ -1811,7 +1625,8 @@
 
                 card.innerHTML =
                     '<div class="menu-card-img">' +
-                        '<img src="' + item.img + '" alt="' + item.name + '" loading="lazy">' +                        (item.badge ? '<span class="menu-badge">' + item.badge + '</span>' : '') +
+                        '<img src="' + item.img + '" alt="' + item.name + '" loading="lazy">' +
+                        (item.badge ? '<span class="menu-badge">' + item.badge + '</span>' : '') +
                     '</div>' +
                     '<div class="menu-card-body">' +
                         '<div class="menu-card-top">' +
@@ -1826,7 +1641,6 @@
             });
         }
 
-        // Initial render
         renderMenu('all');
 
         // ===== MENU TABS =====
@@ -1838,53 +1652,57 @@
             });
         });
 
-        // ===== SET MIN DATE =====
+        // ===== MIN DATE =====
         var dateInput = document.getElementById('date');
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0');
-        var yyyy = today.getFullYear();
-        dateInput.setAttribute('min', yyyy + '-' + mm + '-' + dd);
+        if (dateInput) {
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0');
+            var yyyy = today.getFullYear();
+            dateInput.setAttribute('min', yyyy + '-' + mm + '-' + dd);
+        }
 
-        // ===== RESERVATION FORM =====
-        document.getElementById('reserveForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // ===== FORM =====
+        var reserveForm = document.getElementById('reserveForm');
+        if (reserveForm) {            reserveForm.addEventListener('submit', function(e) {
+                e.preventDefault();
 
-            var btn = document.getElementById('submitBtn');
-            btn.disabled = true;
-            btn.textContent = 'جاري الإرسال...';
+                var btn = document.getElementById('submitBtn');
+                btn.disabled = true;
+                btn.textContent = 'Submitting...';
 
-            setTimeout(function() {
-                btn.disabled = false;
-                btn.textContent = 'تأكيد الحجز';
-
-                // Show toast
-                var toast = document.getElementById('toast');
-                toast.classList.add('show');
                 setTimeout(function() {
-                    toast.classList.remove('show');
-                }, 4000);
+                    btn.disabled = false;
+                    btn.textContent = 'Confirm Reservation';
 
-                // Reset form
-                document.getElementById('reserveForm').reset();
-            }, 1500);
-        });
+                    var toast = document.getElementById('toast');
+                    toast.classList.add('show');
+
+                    setTimeout(function() {
+                        toast.classList.remove('show');
+                    }, 4000);
+
+                    reserveForm.reset();
+                }, 1500);
+            });
+        }
 
         // ===== SCROLL REVEAL =====
         function revealOnScroll() {
             var reveals = document.querySelectorAll('.reveal');
             reveals.forEach(function(el) {
                 var top = el.getBoundingClientRect().top;
-                var trigger = window.innerHeight * 0.85;
-                if (top < trigger) {
+                if (top < window.innerHeight * 0.85) {
                     el.classList.add('active');
                 }
             });
         }
 
         window.addEventListener('scroll', revealOnScroll);
+
+        // Run reveal on load
         window.addEventListener('load', function() {
-            setTimeout(revealOnScroll, 200);
+            setTimeout(revealOnScroll, 300);
         });
 
         // ===== SMOOTH SCROLL =====
@@ -1895,14 +1713,7 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-            });
-        });
-
-        // ===== PREVENT HORIZONTAL SCROLL =====
-        document.addEventListener('DOMContentLoaded', function() {
-            document.documentElement.style.overflowX = 'hidden';
-            document.body.style.overflowX = 'hidden';
-        });
+            });        });
     </script>
 </body>
-    </html>
+</html>
